@@ -31,7 +31,6 @@
 						</div>
 					</div>
 
-					<!-- Form Name -->
 					<legend align="center">
 						<b>Adicionar Filme</b>
 					</legend>
@@ -43,7 +42,6 @@
 						</div>
 					</div>
 
-					<!-- Text input-->
 					<div class="form-group"
 						th:classappend="${#fields.hasErrors('nome')}? 'has-error'">
 						<div class="col">
@@ -59,7 +57,6 @@
 						</div>
 					</div>
 
-					<!-- Text input-->
 					<div class="form-group">
 						<div class="col">
 							<label class="col control-label" for="genero_filme"><b>Gênero*</b></label>
@@ -73,7 +70,6 @@
 						</div>
 					</div>
 
-					<!-- Textarea -->
 					<div class="form-group">
 						<div class="col">
 							<label class="col control-label" for="text_sinopse"><b>Sinopse</b></label>
@@ -83,7 +79,6 @@
 						</div>
 					</div>
 
-					<!-- Textarea -->
 					<div class="form-group">
 						<div class="col">
 							<label class="col control-label" for="text_anotacoes"><b>Anotações</b></label>
@@ -92,6 +87,7 @@
 								placeholder="O que eu achei? Opiniões pessoais"></textarea>
 						</div>
 					</div>
+					
 					<div class="form-group">
 						<div class="col" align="right">
 							<p>
@@ -99,7 +95,7 @@
 							</p>
 						</div>
 					</div>
-					<!-- Button (Double) -->
+					
 					<div class="form-group">
 						<label class="col control-label" for="btn_salvar"></label>
 						<div class="col">
@@ -107,7 +103,6 @@
 							<a th:href="@{/filmes}" id="btn_cancelar" class="btn btn-danger">Cancelar</a>
 						</div>
 					</div>
-
 
 				</fieldset>
 			</form>

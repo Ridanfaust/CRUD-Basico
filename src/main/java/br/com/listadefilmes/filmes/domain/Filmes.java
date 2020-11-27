@@ -11,31 +11,31 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
 
-@Entity
-@Table(name = "TBL_FILMES")
-public class Filmes implements Serializable{
-	
+@Entity // Usando a anotação do Spring para definir a classe como o modelo ou domínio
+@Table(name = "TBL_FILMES") // Anotação usada para criação da tabela TBL_FILMES
+public class Filmes implements Serializable {
+
 	// Default serialVersionUID
 	private static final long serialVersionUID = 1L;
-
-	@Id
-	@SequenceGenerator(name = "seq_gen", sequenceName = "seq", allocationSize = 1)
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_gen")
-	private Long id;
 	
-	@Column(name="NOME", length=100, nullable=false)
+	@Id // Anotação para garantir que o id seja a chave identificadora na tabela
+	@SequenceGenerator(name = "seq_gen", sequenceName = "seq", allocationSize = 1) // Gera uma sequência numérica
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_gen") // Utiliza a sequência para popular o id na tabela
+	private Long id;
+
+	// Demais colunas da TBL_FILMES
+	@Column(name = "NOME", length = 100, nullable = false)
 	@NotEmpty(message = "Informe o nome do filme")
 	private String nome;
-	
-	@Column(name="GENERO", length=20, nullable=false)
+
+	@Column(name = "GENERO", length = 20, nullable = false)
 	@NotEmpty(message = "Informe o gênero do filme")
 	private String genero;
-		
-	@Column(name="SINOPSE", nullable=false)
-	//@NotEmpty(message = "Sinopse não pode estar em branco, sobre o que é o filme?")
+
+	@Column(name = "SINOPSE", nullable = false)
 	private String sinopse;
-	
-	@Column(name="ANOTACAO")
+
+	@Column(name = "ANOTACAO")
 	private String anotacao;
 
 	// Getters e Setters
@@ -79,4 +79,6 @@ public class Filmes implements Serializable{
 		this.anotacao = anotacao;
 	}
 	
+	// Pela simplicidade do projeto e uso do Spring, não serão criados construtores e métodos extra para esta classe
+
 }
