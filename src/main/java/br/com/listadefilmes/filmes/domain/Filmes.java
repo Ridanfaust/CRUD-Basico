@@ -11,19 +11,19 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
 
-@Entity // Usando a anotação do Spring para definir a classe como o modelo ou domínio
-@Table(name = "TBL_FILMES") // Anotação usada para criação da tabela TBL_FILMES
+@Entity // Usando a anotação do Spring para definir a classe como o modelo ou domínio.
+@Table(name = "TBL_FILMES") // Anotação usada para criação da tabela TBL_FILMES.
 public class Filmes implements Serializable {
 
 	// Default serialVersionUID
 	private static final long serialVersionUID = 1L;
 	
-	@Id // Anotação para garantir que o id seja a chave identificadora na tabela
-	@SequenceGenerator(name = "seq_gen", sequenceName = "seq", allocationSize = 1) // Gera uma sequência numérica
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_gen") // Utiliza a sequência para popular o id na tabela
+	@Id // Anotação para garantir que o id seja a chave identificadora na tabela.
+	@SequenceGenerator(name = "seq_gen", sequenceName = "seq", allocationSize = 1) // Gera uma sequência numérica.
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_gen") // Utiliza a sequência para popular o id na tabela.
 	private Long id;
 
-	// Demais colunas da TBL_FILMES
+	// Demais colunas da TBL_FILMES.
 	@Column(name = "NOME", length = 100, nullable = false)
 	@NotEmpty(message = "Informe o nome do filme")
 	private String nome;
@@ -38,7 +38,7 @@ public class Filmes implements Serializable {
 	@Column(name = "ANOTACAO")
 	private String anotacao;
 
-	// Getters e Setters
+	// Getters e Setters.
 	public Long getId() {
 		return id;
 	}
@@ -79,6 +79,6 @@ public class Filmes implements Serializable {
 		this.anotacao = anotacao;
 	}
 	
-	// Pela simplicidade do projeto e uso do Spring, não serão criados construtores e métodos extra para esta classe
+	// Pela simplicidade do projeto e uso do Spring, não serão criados construtores e métodos extra para esta classe.
 
 }
